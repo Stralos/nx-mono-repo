@@ -22,9 +22,6 @@
     "app-proxy": {
       "tags": []
     },
-    "app-server": {
-      "tags": []
-    },
     "time": {
       "tags": []
     }

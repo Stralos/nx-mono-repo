@@ -51,56 +51,6 @@
         }
       }
     },
-    "app-server": {
-      "root": "apps/app-server",
-      "sourceRoot": "apps/app-server/src",
-      "projectType": "application",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/apps/app-server",
-            "main": "apps/app-server/src/main.ts",
-            "tsConfig": "apps/app-server/tsconfig.app.json",
-            "assets": ["apps/app-server/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/app-server/src/environments/environment.ts",
-                  "with": "apps/app-server/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "executor": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "app-server:build"
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/app-server/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/app-server"],
-          "options": {
-            "jestConfig": "apps/app-server/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "time": {
       "root": "libs/time",
       "sourceRoot": "libs/time/src",
@@ -125,6 +75,5 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/express"
-  },
-  "defaultProject": "app-server"
+  }
 }
