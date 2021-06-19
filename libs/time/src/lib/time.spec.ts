@@ -1,7 +1,7 @@
-import { time } from './time';
+import { date } from './time';
 
 describe('time', () => {
   it('should work', () => {
-    expect(time()).toEqual('time');
+    expect(date(new Date('2022-06-16'))).toEqual('2022-06-16');
   });
 });
