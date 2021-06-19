@@ -1,7 +1,14 @@
+image: node:14-alpine
 stages:
   - test
+  - build
 
 test:
   stage: test
   script:
     - echo 'Success!'
+
+build:
+  stage: build
+  script:
+    - echo 'Building...'
