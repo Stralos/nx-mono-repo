@@ -1,12 +1,18 @@
 image: node:14-alpine
 stages:
+  - prep
   - test
   - build
+
+prep:
+  stage: prep
+  script:
+    - yarn
 
 test:
   stage: test
   script:
-    - echo 'Success!'
+    - yarn nx test time
 
 build:
   stage: build
