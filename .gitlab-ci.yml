@@ -1,29 +1,12 @@
 image: node:14-alpine
 stages:
-  - prep
   - test
   - build
 
-prep:
-  stage: prep
-  cache:
-    - key:
-        files:
-          - "yarn.lock"
-      paths:
-        - .yarn-cache/
-  script:
-    - yarn install --cache-folder .yarn-cache
-
 test:
   stage: test
-  cache:
-    - key:
-        files:
-          - "yarn.lock"
-      paths:
-        - .yarn-cache/
   script:
+    - yarn 
     - yarn nx test time
 
 build:
