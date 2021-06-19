@@ -7,7 +7,7 @@ test:
   stage: test
   script:
     - yarn 
-    - yarn nx test time
+    - yarn affected:test
 
 build:
   stage: build
