@@ -5,9 +5,15 @@ stages:
   - build
 
 prep:
+  cache:
+    - key:
+        files:
+          - "yarn.lock"
+      paths:
+        - .yarn-cache/
   stage: prep
   script:
-    - yarn
+    - yarn install --cache-folder .yarn-cache
 
 test:
   stage: test
