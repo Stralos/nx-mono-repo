@@ -1,7 +1,15 @@
+image: alpine:latest
 stages:
   - test
+  - build
 
 test:
   stage: test
   script:
-    - echo 'Success!'
+    - yarn 
+    - yarn affected:test
+
+build:
+  stage: build
+  script:
+    - echo 'Building...'
