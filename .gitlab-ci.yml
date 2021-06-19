@@ -4,19 +4,22 @@ stages:
   - test
   - build
 
+cache:
+  - key:
+      files:
+        - "yarn.lock"
+    paths:
+      - .yarn-cache/
+
 prep:
-  cache:
-    - key:
-        files:
-          - "yarn.lock"
-      paths:
-        - .yarn-cache/
   stage: prep
+  extends: cache
   script:
     - yarn install --cache-folder .yarn-cache
 
 test:
   stage: test
+  extends: cache
   script:
     - yarn nx test time
 
